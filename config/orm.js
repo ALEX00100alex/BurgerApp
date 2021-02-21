@@ -2,7 +2,6 @@ const connection = require('./connection');
 
 const orm = {
     selectAll(table, callback) {
-        console.log("orm.js", "get all burgers");
       const queryString = 'SELECT * FROM ??';
       connection.query(
         queryString,
@@ -31,9 +30,7 @@ const orm = {
         `UPDATE ?? SET ?? = "??" WHERE id = "??"`;  
       connection.query(
         queryString,
-        [
-            table, colName, newValue, id
-        ],
+        [table, colName, newValue, id],
         (err, result) => {
           if (err) throw err;
           callback(result);

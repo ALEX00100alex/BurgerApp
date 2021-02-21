@@ -14,6 +14,24 @@ router.get("/api/burgers", (req,res) => {
     });
 });
 
+//post - create
+router.post("/api/burgers", (req,res) => {
+    console.log("add a new burger")
+    burger.create(result => {
+        console.log(result);
+        res.json(result);
+    });
+});
+
+//put - updateone
+router.put("/api/burgers", (req,res) => {
+    console.log("devour a burger")
+    burger.devour(result => {
+        console.log(result);
+        res.json(result);
+    });
+});
+
 
 
 module.exports = router;
