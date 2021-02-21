@@ -16,8 +16,9 @@ router.get("/api/burgers", (req,res) => {
 
 //post - create
 router.post("/api/burgers", (req,res) => {
-    console.log("add a new burger")
-    burger.create(result => {
+    console.log("add a new burger");
+    const name = req.body.name;
+    burger.create(name, result => {
         console.log(result);
         res.json(result);
     });
@@ -25,13 +26,12 @@ router.post("/api/burgers", (req,res) => {
 
 //put - updateone
 router.put("/api/burgers", (req,res) => {
-    console.log("devour a burger")
-    burger.devour(result => {
+    console.log("devour a burger");
+    const id = req.body.id;
+    burger.devour(id, result => {
         console.log(result);
         res.json(result);
     });
 });
-
-
 
 module.exports = router;
