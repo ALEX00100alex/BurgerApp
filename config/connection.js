@@ -26,7 +26,7 @@ var connection = mysql.createConnection({
           host: 'localhost',
           user: 'root',
           password: 'ALEX00100alex!!',
-          database: 'burgers_BD'
+          database: 'burgers_DB'
     });
   };
 
