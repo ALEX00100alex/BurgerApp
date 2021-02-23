@@ -1,3 +1,9 @@
 body {
-    background-color: pink;
+    font-size: x-large;
+    color: black;
+    background-image: url("https://lh3.googleusercontent.com/proxy/6sVY2YjnuZ7IaxLpTiCzoDMlQcKb-BVZXGf9OzqBPtZOfMgYv5nj6jhRJsF04MXJ-F5gWqCTjaV7BwfoiE9Tpi-ujE3m3VysJki0");
+    background-color: darkturquoise;
+    background-repeat: no-repeat;
+    background-position: center;
 };
+
