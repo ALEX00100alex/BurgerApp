@@ -8,17 +8,16 @@ const orm = {
         [table],
         (err, result) => {
           if (err) throw err;
-          console.log("orm.js", result);
           callback(result);
         }
       );
     },
     insertOne(table, data, callback) {
-      const queryString = `INSERT INTO ?? (??) VALUES (??)`;
-      console.log(queryString);
+      const queryString = `INSERT INTO ${table} (${Object.keys(data).toString()}) VALUES (${Object.values(data).toString()})`;
+      // console.log(data);
       connection.query(
         queryString,
-        [table, Object.keys(data), Object.values(data)],
+        // [table, ...Object.keys(data), ...Object.values(data)],
         (err, result) => {
           if (err) throw err;
           callback(result);
@@ -27,10 +26,10 @@ const orm = {
     },
     updateOne(table, colName, newValue, id, callback) {
       const queryString =
-        `UPDATE ?? SET ?? = "??" WHERE id = "??"`;  
+        `UPDATE ${table} SET ${colName} = ${newValue} WHERE id = ${id}`;  
       connection.query(
         queryString,
-        [table, colName, newValue, id],
+        // [table, colName, newValue, id],
         (err, result) => {
           if (err) throw err;
           callback(result);

@@ -5,10 +5,9 @@ const burger = {
         orm.updateOne("burgers", "devoured", true, id, callback); 
     },
     create(burger_name, callback) {
-        orm.insertOne("burgers", {burger_name}, callback);
+        orm.insertOne("burgers", {burger_name: `"${burger_name}"`, devoured: false}, callback);
     },
     allBurgers(callback) {
-        console.log("burger.js", "get all burgers");
         orm.selectAll("burgers", callback);
     },
 };

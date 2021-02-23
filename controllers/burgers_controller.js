@@ -9,15 +9,14 @@ router.get("/", (req, res) => {
 router.get("/api/burgers", (req,res) => {
     console.log("get all burgers")
     burger.allBurgers(result => {
-        console.log(result);
         res.json(result);
     });
 });
 
 //post - create
 router.post("/api/burgers", (req,res) => {
-    console.log("add a new burger");
     const name = req.body.name;
+    console.log("add a new burger", name);
     burger.create(name, result => {
         console.log(result);
         res.json(result);
@@ -27,7 +26,7 @@ router.post("/api/burgers", (req,res) => {
 //put - updateone
 router.put("/api/burgers", (req,res) => {
     console.log("devour a burger");
-    const id = req.body.id;
+    const id = Number(req.body.id);
     burger.devour(id, result => {
         console.log(result);
         res.json(result);
